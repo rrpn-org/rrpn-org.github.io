@@ -1,0 +1,71 @@
+---
+import Button from "@/components/button/Button.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Projects"
+  description="RRPN operates as a portfolio of community projects. Our first is Altadena Recovery Watch, engaging thousands of residents on the state land-use legislation shaping their rebuilding."
+>
+  <!-- Page header -->
+  <section class="bg-primary-700">
+    <div class="site-container pt-36 pb-16 md:pt-44 md:pb-20">
+      <h1 class="h1 text-base-50 max-w-3xl">Projects</h1>
+      <p class="text-primary-100 mt-4 max-w-2xl text-lg">
+        RRPN operates as a portfolio of community projects — each one rooted in a real place, a
+        real recovery, or a real policy fight.
+      </p>
+    </div>
+  </section>
+
+  <section class="site-container py-16 md:py-24">
+    <div class="mx-auto max-w-3xl">
+      <p class="text-lg leading-relaxed">
+        Policy work is strongest when it grows from the ground up. Rather than starting with
+        abstractions, RRPN builds its research, advocacy, and education around the places where
+        state law and local land use actually collide. Each project stands on its own — with its
+        own community, its own voice, and its own goals — while drawing on RRPN's shared policy
+        research and statewide perspective.
+      </p>
+    </div>
+
+    <!-- Project cards -->
+    <div class="mx-auto mt-16 max-w-3xl space-y-8">
+      <div class="border-border bg-base-50 overflow-hidden rounded-lg border shadow-sm">
+        <div class="bg-primary-700 relative flex min-h-48 items-center justify-center">
+          <!-- TODO: replace with real ARW photography (see BUILD-NOTES.md image list) -->
+          <p class="text-primary-200 px-8 text-center text-sm">
+            Image placeholder — Altadena foothills / ARW community photo
+          </p>
+        </div>
+        <div class="p-8">
+          <p class="text-accent-700 mb-2 text-sm font-medium tracking-widest uppercase">
+            Active &middot; Altadena, CA
+          </p>
+          <h2 class="h2 text-primary">Altadena Recovery Watch</h2>
+          <p class="text-muted-foreground mt-3">
+            Born of the 2025 Eaton Fire, Altadena Recovery Watch keeps thousands of residents
+            informed and engaged on the state land-use legislation shaping their rebuilding —
+            including SB 1090 and SB 1123.
+          </p>
+          <div class="mt-6">
+            <Button href="/projects/altadena-recovery-watch" variant="primary" arrow="right">
+              Visit the project
+            </Button>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-border bg-base-100 rounded-lg border border-dashed p-8">
+        <h2 class="h3 text-primary">More projects to come</h2>
+        <p class="text-muted-foreground mt-3">
+          RRPN's model is built to travel. If your community is navigating the intersection of
+          state law and local rebuilding, adaptation, or planning, we'd like to hear from you.
+        </p>
+        <div class="mt-5">
+          <Button href="/get-involved" variant="outline">Partner with us</Button>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

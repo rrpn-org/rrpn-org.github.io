@@ -1,0 +1,246 @@
+---
+import { getCollection } from "astro:content";
+import { Icon } from "astro-icon/components";
+
+import Button from "@/components/button/Button.astro";
+import NewsletterSignup from "@/components/newsletter/NewsletterSignup.astro";
+import { getLocaleFromUrl } from "@/js/localeUtils";
+import { getTranslatedData } from "@/js/translationUtils";
+import { formatDate } from "@/js/textUtils";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const currLocale = getLocaleFromUrl(Astro.url);
+const siteData = getTranslatedData("siteData", currLocale);
+
+// three pillars
+const pillars = [
+  {
+    icon: "tabler/list-check",
+    title: "Research & Policy",
+    description:
+      "Rigorous, best-practices research on housing law, disaster recovery, climate adaptation, and land use — grounded in what the law says and what it means on the ground.",
+  },
+  {
+    icon: "tabler/speakerphone",
+    title: "Advocacy",
+    description:
+      "Advocating for planning frameworks that respect both statewide goals and community self-determination, before state and local decision-makers.",
+  },
+  {
+    icon: "tabler/school",
+    title: "Education",
+    description:
+      "Educating residents, practitioners, and policymakers so everyone at the table understands what the law says, what it means, and what it could be.",
+  },
+];
+
+// latest teasers from Updates and News collections
+const updates = (await getCollection("updates", ({ data }) => data.draft !== true))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 2);
+const news = (await getCollection("news", ({ data }) => data.draft !== true))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 2);
+---
+
+<BaseLayout title={siteData.title} description={siteData.description} navStyle="frosted">
+  <!-- Hero -->
+  <section
+    class="bg-primary-700 relative isolate overflow-hidden"
+    aria-label="Hero section"
+  >
+    <!-- subtle contour-line background, drawn from the brand's topography motif -->
+    <svg
+      class="pointer-events-none absolute inset-0 h-full w-full opacity-[0.12]"
+      viewBox="0 0 1200 600"
+      preserveAspectRatio="xMidYMid slice"
+      aria-hidden="true"
+    >
+      <g fill="none" stroke="#E8DCC8" stroke-width="1.5">
+        <path d="M-50 480 C 200 400, 400 520, 650 440 S 1050 380, 1250 430"></path>
+        <path d="M-50 420 C 220 340, 420 460, 670 380 S 1070 320, 1250 370"></path>
+        <path d="M-50 360 C 240 280, 440 400, 690 320 S 1090 260, 1250 310"></path>
+        <path d="M-50 300 C 260 220, 460 340, 710 260 S 1110 200, 1250 250"></path>
+        <path d="M-50 240 C 280 160, 480 280, 730 200 S 1130 140, 1250 190"></path>
+      </g>
+    </svg>
+
+    <div class="site-container relative">
+      <div id="hero-trigger" class="max-w-3xl pt-36 pb-24 md:pt-48 md:pb-32">
+        <p
+          data-mos-anchor="#hero-trigger"
+          data-mos="fade-right"
+          class="text-accent-200 mb-4 text-sm font-medium tracking-widest uppercase"
+        >
+          Better planning for a resilient California
+        </p>
+        <h1
+          data-mos-anchor="#hero-trigger"
+          data-mos="fade-right"
+          data-mos-delay=".1"
+          class="font-heading text-base-50 mb-6 text-4xl leading-tight font-semibold md:text-5xl xl:text-6xl"
+        >
+          Policy, advocacy, and education at the intersection of state law and local land use.
+        </h1>
+        <p
+          data-mos-anchor="#hero-trigger"
+          data-mos="fade-right"
+          data-mos-delay=".2"
+          class="text-primary-100 mb-10 max-w-2xl text-lg md:text-xl"
+        >
+          The Responsible and Resilient Planning Network works so communities can rebuild, adapt,
+          and thrive.
+        </p>
+        <div
+          class="flex flex-wrap gap-4"
+          data-mos-anchor="#hero-trigger"
+          data-mos="fade-right"
+          data-mos-delay=".3"
+        >
+          <Button href="/about" variant="secondary" class="md:text-lg">About RRPN</Button>
+          <Button href="/get-involved" variant="outline" class="button--on-dark md:text-lg">
+            Get Involved
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Three pillars -->
+  <section class="site-container py-20 md:py-28" aria-label="What we do">
+    <div class="max-w-2xl">
+      <h2 class="h2 text-primary">What we do</h2>
+      <p class="text-muted-foreground mt-3 md:text-lg">
+        California communities are caught between state mandates and local realities. RRPN works to
+        close that gap through three lines of work.
+      </p>
+    </div>
+    <div class="mt-12 grid gap-8 md:grid-cols-3">
+      {
+        pillars.map((pillar, idx) => (
+          <div
+            class="border-border bg-base-50 rounded-lg border p-8 shadow-sm"
+            data-mos="fade-up"
+            data-mos-delay={`${idx * 0.1}`}
+          >
+            <div class="bg-primary-100 text-primary mb-5 flex h-12 w-12 items-center justify-center rounded-md">
+              <Icon name={pillar.icon} class="h-6 w-6" aria-hidden="true" />
+            </div>
+            <h3 class="h3 text-primary">{pillar.title}</h3>
+            <p class="text-muted-foreground mt-3">{pillar.description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- Featured project: Altadena Recovery Watch -->
+  <section class="bg-base-100 border-y" aria-label="Featured project">
+    <div class="site-container py-20 md:py-28">
+      <div class="grid items-center gap-12 lg:grid-cols-2">
+        <div>
+          <p class="text-accent-700 mb-3 text-sm font-medium tracking-widest uppercase">
+            Featured project
+          </p>
+          <h2 class="h2 text-primary">Altadena Recovery Watch</h2>
+          <p class="text-muted-foreground mt-4 md:text-lg">
+            Born of the 2025 Eaton Fire, Altadena Recovery Watch engages thousands of residents on
+            the state land-use legislation shaping their rebuilding — including SB 1090 and SB
+            1123. Neighbors informing neighbors, so the community's voice reaches Sacramento.
+          </p>
+          <div class="mt-8">
+            <Button href="/projects/altadena-recovery-watch" variant="primary" arrow="right">
+              Learn about ARW
+            </Button>
+          </div>
+        </div>
+        <div
+          class="border-border bg-primary-700 relative hidden min-h-72 overflow-hidden rounded-lg border lg:block"
+        >
+          <!-- TODO: replace with real ARW photography (community meeting / Altadena foothills).
+               See BUILD-NOTES.md image list. -->
+          <div class="absolute inset-0 flex items-center justify-center">
+            <p class="text-primary-200 px-8 text-center text-sm">
+              Image placeholder — Altadena foothills / ARW community photo
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest updates & news -->
+  <section class="site-container py-20 md:py-28" aria-label="Latest updates and news">
+    <div class="grid gap-16 lg:grid-cols-2">
+      <div>
+        <div class="flex items-baseline justify-between">
+          <h2 class="h2 text-primary">Latest updates</h2>
+          <a class="text-terracotta-600 text-sm font-medium hover:underline" href="/updates"
+            >All updates</a
+          >
+        </div>
+        <ul class="mt-6 space-y-6">
+          {
+            updates.length === 0 && (
+              <li class="text-muted-foreground">Bill tracking updates are coming soon.</li>
+            )
+          }
+          {
+            updates.map((entry) => (
+              <li class="border-border border-b pb-6">
+                <a class="group" href={`/updates/${entry.id}/`}>
+                  <p class="text-muted-foreground text-sm">
+                    {formatDate(entry.data.pubDate, currLocale)}
+                    {entry.data.reviewStatus === "draft" && (
+                      <span class="bg-warning text-warning-foreground ml-2 rounded-sm px-1.5 py-0.5 text-xs font-semibold tracking-wide uppercase">
+                        Draft
+                      </span>
+                    )}
+                  </p>
+                  <h3 class="h3 group-hover:text-primary mt-1 transition">{entry.data.title}</h3>
+                  <p class="text-muted-foreground mt-2 line-clamp-2">{entry.data.description}</p>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+      <div>
+        <div class="flex items-baseline justify-between">
+          <h2 class="h2 text-primary">In the news</h2>
+          <a class="text-terracotta-600 text-sm font-medium hover:underline" href="/news"
+            >All news</a
+          >
+        </div>
+        <ul class="mt-6 space-y-6">
+          {
+            news.length === 0 && (
+              <li class="text-muted-foreground">Press coverage will be posted here.</li>
+            )
+          }
+          {
+            news.map((entry) => (
+              <li class="border-border border-b pb-6">
+                <a class="group" href={`/news/${entry.id}/`}>
+                  <p class="text-muted-foreground text-sm">
+                    {formatDate(entry.data.pubDate, currLocale)}
+                    {entry.data.outlet && <span> &middot; {entry.data.outlet}</span>}
+                    {entry.data.reviewStatus === "draft" && (
+                      <span class="bg-warning text-warning-foreground ml-2 rounded-sm px-1.5 py-0.5 text-xs font-semibold tracking-wide uppercase">
+                        Draft
+                      </span>
+                    )}
+                  </p>
+                  <h3 class="h3 group-hover:text-primary mt-1 transition">{entry.data.title}</h3>
+                  <p class="text-muted-foreground mt-2 line-clamp-2">{entry.data.description}</p>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <NewsletterSignup />
+</BaseLayout>

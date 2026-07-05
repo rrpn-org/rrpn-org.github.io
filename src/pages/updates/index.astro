@@ -1,0 +1,65 @@
+---
+import { getCollection } from "astro:content";
+
+import { getLocaleFromUrl } from "@/js/localeUtils";
+import { formatDate } from "@/js/textUtils";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const currLocale = getLocaleFromUrl(Astro.url);
+
+const updates = (await getCollection("updates", ({ data }) => data.draft !== true)).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+---
+
+<BaseLayout
+  title="Updates"
+  description="Plain-language tracking of the state legislation shaping how California communities rebuild and adapt: what each bill says, what changed, and what it means for you."
+>
+  <section class="bg-primary-700">
+    <div class="site-container pt-36 pb-16 md:pt-44 md:pb-20">
+      <h1 class="h1 text-base-50 max-w-3xl">Updates</h1>
+      <p class="text-primary-100 mt-4 max-w-2xl text-lg">
+        Plain-language bill tracking: what the bill says, what changed, and what it means for you.
+      </p>
+    </div>
+  </section>
+
+  <section class="site-container py-16 md:py-24">
+    <div class="mx-auto max-w-3xl">
+      <ul class="space-y-8">
+        {
+          updates.map((entry) => (
+            <li class="border-border border-b pb-8">
+              <a class="group" href={`/updates/${entry.id}/`}>
+                <p class="text-muted-foreground text-sm">
+                  {formatDate(entry.data.pubDate, currLocale)}
+                  {entry.data.bills && <span> &middot; {entry.data.bills.join(" / ")}</span>}
+                  {entry.data.reviewStatus === "draft" && (
+                    <span class="bg-warning text-warning-foreground ml-2 rounded-sm px-1.5 py-0.5 text-xs font-semibold tracking-wide uppercase">
+                      Draft
+                    </span>
+                  )}
+                </p>
+                <h2 class="h3 group-hover:text-primary mt-2 transition">{entry.data.title}</h2>
+                <p class="text-muted-foreground mt-2">{entry.data.description}</p>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+
+      <div class="bg-base-100 border-border mt-16 rounded-lg border p-6">
+        <p class="font-medium">Want these in your inbox?</p>
+        <p class="text-muted-foreground mt-2">
+          The
+          <a
+            class="text-terracotta-600 underline hover:no-underline"
+            href="/get-involved#newsletter"
+            >RRPN newsletter</a
+          > delivers plain-language updates as bills move — no jargon, no noise.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

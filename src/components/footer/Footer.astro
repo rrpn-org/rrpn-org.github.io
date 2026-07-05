@@ -1,0 +1,78 @@
+---
+import SiteLogo from "@/components/site-logo/SiteLogo.astro";
+
+import FooterLink from "./FooterLink.astro";
+
+/**
+ * Footer columns and links configuration
+ * Edit this object to change column titles and links.
+ */
+const footerColumns = [
+  {
+    title: "Organization",
+    links: [
+      { label: "About", href: "/about" },
+      { label: "Projects", href: "/projects" },
+      { label: "Press & Media Kit", href: "/press" },
+      { label: "Contact", href: "/contact" },
+    ],
+  },
+  {
+    title: "Resources",
+    links: [
+      { label: "Publications", href: "/publications" },
+      { label: "Updates", href: "/updates" },
+      { label: "News", href: "/news" },
+    ],
+  },
+  {
+    title: "Take Action",
+    links: [
+      { label: "Get Involved", href: "/get-involved" },
+      { label: "Newsletter", href: "/get-involved#newsletter" },
+      { label: "Privacy Policy", href: "/privacy-policy" },
+    ],
+  },
+];
+---
+
+<section
+  class="from-primary-500/15 to-background mt-16 overflow-hidden bg-gradient-to-b pt-16 pb-10"
+>
+  <div class="site-container">
+    <div class="border-b pb-16">
+      <div class="-m-8 flex flex-wrap">
+        <div class="w-full p-8 sm:w-1/2 lg:w-6/12">
+          <div class="lg:max-w-sm">
+            <SiteLogo />
+            <p class="text-muted-foreground mt-4 leading-relaxed font-medium md:max-w-xs">
+              Best-practices policy, advocacy, and education at the intersection of state law and
+              local land use.
+            </p>
+            <p class="text-muted-foreground mt-4 text-sm">
+              <a
+                class="hover:text-primary underline hover:no-underline"
+                href="mailto:info@rrpn.org">info@rrpn.org</a
+              >
+            </p>
+          </div>
+        </div>
+        {
+          footerColumns.map((col) => (
+            <div class="w-full p-8 sm:w-1/2 lg:w-2/12" aria-label={col.title}>
+              <h3 class="font-heading mb-8 text-sm font-medium uppercase">{col.title}</h3>
+              <ul class="space-y-2">
+                {col.links.map((link) => (
+                  <FooterLink label={link.label} href={link.href} />
+                ))}
+              </ul>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+    <p class="text-muted-foreground py-5 text-center text-sm leading-normal font-medium">
+      &copy; 2026 Responsible and Resilient Planning Network &middot; rrpn.org
+    </p>
+  </div>
+</section>

@@ -1,0 +1,131 @@
+---
+import { Image } from "astro:assets";
+
+import noelHeadshot from "@images/noel-headshot.jpg";
+import Button from "@/components/button/Button.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="About RRPN"
+  description="The Responsible and Resilient Planning Network produces best-practices policy research, advocacy, and education at the intersection of state law and local land use."
+>
+  <!-- Page header -->
+  <section class="bg-primary-700">
+    <div class="site-container pt-36 pb-16 md:pt-44 md:pb-20">
+      <h1 class="h1 text-base-50 max-w-3xl">About RRPN</h1>
+      <p class="text-primary-100 mt-4 max-w-2xl text-lg">
+        Better planning for a resilient California.
+      </p>
+    </div>
+  </section>
+
+  <!-- Mission (full statement from approved brand package) -->
+  <section class="site-container py-16 md:py-24" aria-label="Our mission">
+    <div class="mx-auto max-w-3xl">
+      <h2 class="h2 text-primary">Our mission</h2>
+      <div class="mt-6 space-y-5 text-lg leading-relaxed">
+        <p>
+          California communities are caught between state mandates and local realities. Housing
+          law, disaster recovery, climate adaptation, and economic development increasingly collide
+          with local land-use authority — and the communities affected are too often the last to be
+          heard.
+        </p>
+        <p>
+          The Responsible and Resilient Planning Network exists to close that gap. We produce
+          rigorous, best-practices policy research; we advocate for planning frameworks that
+          respect both statewide goals and community self-determination; and we educate residents,
+          practitioners, and policymakers so that everyone at the table understands what the law
+          says, what it means, and what it could be.
+        </p>
+        <p>
+          RRPN operates as a portfolio of community projects. Our first, Altadena Recovery Watch,
+          grew out of the 2025 Eaton Fire and now engages thousands of residents on the state
+          land-use legislation shaping their rebuilding.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Noel -->
+  <section class="bg-base-100 border-y" aria-label="About the founder">
+    <div class="site-container py-16 md:py-24">
+      <div class="mx-auto grid max-w-5xl gap-12 lg:grid-cols-[minmax(0,300px)_1fr]">
+        <div>
+          <!-- TODO (Noel): replace src/assets/images/noel-headshot.jpg with the real headshot
+               (brand package recommends using the same image as LinkedIn, e.g. Headshot1.jpeg). -->
+          <Image
+            src={noelHeadshot}
+            alt="Noel Hyun Minor, founder of the Responsible and Resilient Planning Network"
+            class="border-border w-full max-w-xs rounded-lg border shadow-sm"
+            width={600}
+          />
+        </div>
+        <div>
+          <h2 class="h2 text-primary">About Noel</h2>
+          <p class="text-muted-foreground mt-1 text-sm tracking-wide uppercase">
+            Noel Hyun Minor &middot; Founder
+          </p>
+          <div class="mt-6 space-y-5 leading-relaxed">
+            <p>
+              Noel Hyun Minor is the founder of the Responsible and Resilient Planning Network. She
+              has spent her career at the intersection of land use, real estate, and public policy
+              in Los Angeles — as a City Hall planning deputy, a registered lobbyist, a land use
+              and environmental attorney, and the leader of a Southern California family office.
+            </p>
+            <p>
+              Noel began her policy career in Los Angeles City government, serving as a planning
+              deputy in Council District 13 under then-Councilmember Eric Garcetti, where she
+              initiated legislation regulating billboards and supergraphics, including revisions to
+              the Hollywood Sign District. She was among the earliest staffers on the 2013 Garcetti
+              mayoral campaign and later directed legal and legislative affairs for the Central
+              City Association, advocating before City, County, and State decision-makers on
+              planning, housing, and development policy for more than 450 member organizations.
+            </p>
+            <p>
+              As a land use attorney at Liner LLP and DLA Piper, Noel guided complex urban-infill
+              and mixed-use developments through entitlement and environmental review, including
+              public-private partnerships with LA Metro and Community Redevelopment Agencies. Real
+              Estate Weekly named her a 2018 Rising Star. Since 2018 she has led The Brooklyn
+              Companies, a family office active in commercial and multifamily real estate across
+              Los Angeles, Orange, and San Diego Counties.
+            </p>
+            <p>
+              Noel founded RRPN after the 2025 Eaton Fire, when her own community's recovery
+              revealed how sharply state law and local rebuilding can collide. She serves on the
+              Board of Governors of the Altadena Town &amp; Country Club, elected to help lead its
+              post-fire recovery, and has held more than a dozen civic, education, housing, and
+              cultural board positions across Los Angeles. She holds a J.D. from USC Gould School
+              of Law and is a member of the State Bar of California.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Transparency -->
+  <section class="site-container py-16 md:py-24" aria-label="Transparency">
+    <div class="mx-auto max-w-3xl">
+      <h2 class="h2 text-primary">Transparency</h2>
+      <div class="mt-6 space-y-5 leading-relaxed">
+        <p>
+          RRPN is newly formed, and its legal formation is in progress. We believe organizations
+          that ask for the public's trust should earn it in the open: as our organizational
+          structure is finalized, we will post our governing documents and financial disclosures on
+          this page as they become available.
+        </p>
+        <p>
+          Questions about our structure, funding, or governance are welcome at
+          <a
+            class="text-terracotta-600 underline hover:no-underline"
+            href="mailto:info@rrpn.org">info@rrpn.org</a
+          >.
+        </p>
+      </div>
+      <div class="mt-10">
+        <Button href="/get-involved" variant="primary" arrow="right">Get involved</Button>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

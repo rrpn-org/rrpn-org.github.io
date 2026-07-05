@@ -1,0 +1,37 @@
+/* buttons, 5 variants: "primary", "secondary", "outline", "ghost", plus .button--on-dark modifier */
+.button {
+  @apply flex items-center justify-center px-6 py-2.5 text-center duration-300;
+  @apply text-primary-foreground flex w-fit min-w-[8rem] rounded-md;
+  @apply disabled:pointer-events-none;
+  @apply focus-visible:ring-primary/50 outline-none focus-visible:ring-3;
+  transition-property:
+    color, background-color, border-color, box-shadow, text-decoration-color, fill, stroke,
+    --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
+  transition-timing-function: var(--default-transition-timing-function);
+  transition-duration: var(--default-transition-duration);
+}
+
+.button--primary {
+  @apply text-primary-foreground bg-primary-700 hover:bg-primary-800;
+}
+
+/* sage green (brand secondary) */
+.button--secondary {
+  @apply text-accent-50 bg-accent-600 hover:bg-accent-700;
+}
+
+.button--outline {
+  @apply text-primary-700 border-primary-600 border-2;
+  @apply hover:bg-primary-700 hover:text-white;
+}
+
+/* outline variant for use on dark (primary-700) backgrounds */
+.button--on-dark.button--outline {
+  @apply text-base-50 border-base-50/50;
+  @apply hover:bg-base-50/10 hover:text-base-50;
+}
+
+.button--ghost {
+  @apply text-primary-700;
+  @apply hover:text-primary-800;
+}

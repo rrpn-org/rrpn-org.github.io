@@ -1,0 +1,77 @@
+---
+import { getCollection } from "astro:content";
+
+import { getLocaleFromUrl } from "@/js/localeUtils";
+import { formatDate } from "@/js/textUtils";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const currLocale = getLocaleFromUrl(Astro.url);
+
+const news = (await getCollection("news", ({ data }) => data.draft !== true)).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+---
+
+<BaseLayout
+  title="News"
+  description="Press coverage of the Responsible and Resilient Planning Network and its community projects."
+>
+  <section class="bg-primary-700">
+    <div class="site-container pt-36 pb-16 md:pt-44 md:pb-20">
+      <h1 class="h1 text-base-50 max-w-3xl">News</h1>
+      <p class="text-primary-100 mt-4 max-w-2xl text-lg">
+        Coverage of RRPN and its community projects.
+      </p>
+    </div>
+  </section>
+
+  <section class="site-container py-16 md:py-24">
+    <div class="mx-auto max-w-3xl">
+      {
+        news.length === 0 && (
+          <p class="text-muted-foreground">
+            Press coverage will be posted here. For media inquiries, see our
+            <a class="text-terracotta-600 underline hover:no-underline" href="/press">
+              Press &amp; Media Kit
+            </a>
+            .
+          </p>
+        )
+      }
+      <ul class="space-y-8">
+        {
+          news.map((entry) => (
+            <li class="border-border border-b pb-8">
+              <a class="group" href={`/news/${entry.id}/`}>
+                <p class="text-muted-foreground text-sm">
+                  {formatDate(entry.data.pubDate, currLocale)}
+                  {entry.data.outlet && <span> &middot; {entry.data.outlet}</span>}
+                  {entry.data.reviewStatus === "draft" && (
+                    <span class="bg-warning text-warning-foreground ml-2 rounded-sm px-1.5 py-0.5 text-xs font-semibold tracking-wide uppercase">
+                      Draft
+                    </span>
+                  )}
+                </p>
+                <h2 class="h3 group-hover:text-primary mt-2 transition">{entry.data.title}</h2>
+                <p class="text-muted-foreground mt-2">{entry.data.description}</p>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+
+      <div class="bg-base-100 border-border mt-16 rounded-lg border p-6">
+        <p class="font-medium">Covering RRPN or Altadena Recovery Watch?</p>
+        <p class="text-muted-foreground mt-2">
+          Boilerplate, bios, and a press contact are on the
+          <a class="text-terracotta-600 underline hover:no-underline" href="/press"
+            >Press &amp; Media Kit</a
+          > page, or email
+          <a class="text-terracotta-600 underline hover:no-underline" href="mailto:info@rrpn.org"
+            >info@rrpn.org</a
+          >.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

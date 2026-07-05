@@ -1,0 +1,69 @@
+---
+/**
+ * Newsletter signup section.
+ *
+ * !! PLACEHOLDER FORM — NOT WIRED TO A MAILING LIST YET !!
+ * TODO (Noel): replace the <form> below with the EmailOctopus embed code.
+ *   1. In EmailOctopus: create the list, then Forms -> Embedded form -> copy the HTML embed.
+ *   2. Delete the <form id="newsletter-form"> block below (and the inline <script> at the
+ *      bottom of this file) and paste the EmailOctopus embed in its place.
+ *   3. Keep the surrounding <section> wrapper so styling stays consistent.
+ * Until then, submitting shows a note pointing readers to info@rrpn.org.
+ */
+import Button from "@/components/button/Button.astro";
+---
+
+<section id="newsletter" class="bg-primary-700 scroll-mt-20">
+  <div class="site-container py-16 md:py-20">
+    <div class="mx-auto max-w-2xl text-center">
+      <h2 class="h2 text-base-50">Stay informed</h2>
+      <p class="text-primary-100 mt-3 md:text-lg">
+        Plain-language updates on the state legislation shaping how California communities rebuild
+        and adapt. No noise — just what the bills say, what changed, and what it means for you.
+      </p>
+
+      <!-- TODO: EmailOctopus embed goes here (replace this form; see notes at top of file) -->
+      <form id="newsletter-form" class="mx-auto mt-8 flex max-w-md flex-col gap-3 sm:flex-row">
+        <label for="newsletter-email" class="sr-only">Email address</label>
+        <input
+          id="newsletter-email"
+          type="email"
+          name="email"
+          required
+          placeholder="you@example.com"
+          class="border-primary-400 bg-base-50 text-base-950 placeholder:text-base-500 focus:outline-outline min-h-12 w-full rounded-md border px-4 py-3"
+        />
+        <Button
+          variant="secondary"
+          type="submit"
+          class="min-h-12 whitespace-nowrap"
+          aria-label="Sign up for the RRPN newsletter"
+        >
+          Sign up
+        </Button>
+      </form>
+      <p id="newsletter-fallback" class="text-primary-100 mt-4 hidden text-sm">
+        Our signup form is almost ready. In the meantime, email
+        <a class="text-base-50 underline" href="mailto:info@rrpn.org?subject=Newsletter%20signup"
+          >info@rrpn.org</a
+        > with the subject "Newsletter signup" and we'll add you.
+      </p>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Placeholder handler until the EmailOctopus embed is swapped in (see TODO above).
+  function initNewsletterPlaceholder() {
+    const form = document.getElementById("newsletter-form") as HTMLFormElement | null;
+    const fallback = document.getElementById("newsletter-fallback");
+    if (form && fallback) {
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        fallback.classList.remove("hidden");
+      });
+    }
+  }
+  initNewsletterPlaceholder();
+  document.addEventListener("astro:after-swap", initNewsletterPlaceholder);
+</script>
