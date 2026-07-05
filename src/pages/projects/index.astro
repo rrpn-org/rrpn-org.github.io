@@ -1,6 +1,9 @@
 ---
+import { Image } from "astro:assets";
+
 import Button from "@/components/button/Button.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import arwAerialHero from "@images/arw-aerial-hero.jpg";
 ---
 
 <BaseLayout
@@ -32,11 +35,13 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
     <!-- Project cards -->
     <div class="mx-auto mt-16 max-w-3xl space-y-8">
       <div class="border-border bg-base-50 overflow-hidden rounded-lg border shadow-sm">
-        <div class="bg-primary-700 relative flex min-h-48 items-center justify-center">
-          <!-- TODO: replace with real ARW photography (see BUILD-NOTES.md image list) -->
-          <p class="text-primary-200 px-8 text-center text-sm">
-            Image placeholder — Altadena foothills / ARW community photo
-          </p>
+        <div class="bg-primary-700 relative min-h-48 overflow-hidden">
+          <Image
+            src={arwAerialHero}
+            alt="Aerial view of an Altadena neighborhood block with a vacant, fire-cleared lot outlined amid surviving tree canopy and rebuilding homes"
+            class="h-full w-full object-cover"
+            width={1200}
+          />
         </div>
         <div class="p-8">
           <p class="text-accent-700 mb-2 text-sm font-medium tracking-widest uppercase">

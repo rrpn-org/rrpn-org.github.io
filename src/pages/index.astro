@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
 
 import Button from "@/components/button/Button.astro";
 import NewsletterSignup from "@/components/newsletter/NewsletterSignup.astro";
@@ -8,6 +9,7 @@ import { getLocaleFromUrl } from "@/js/localeUtils";
 import { getTranslatedData } from "@/js/translationUtils";
 import { formatDate } from "@/js/textUtils";
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import arwAerialHero from "@images/arw-aerial-hero.jpg";
 
 const currLocale = getLocaleFromUrl(Astro.url);
 const siteData = getTranslatedData("siteData", currLocale);
@@ -157,13 +159,12 @@ const news = (await getCollection("news", ({ data }) => data.draft !== true))
         <div
           class="border-border bg-primary-700 relative hidden min-h-72 overflow-hidden rounded-lg border lg:block"
         >
-          <!-- TODO: replace with real ARW photography (community meeting / Altadena foothills).
-               See BUILD-NOTES.md image list. -->
-          <div class="absolute inset-0 flex items-center justify-center">
-            <p class="text-primary-200 px-8 text-center text-sm">
-              Image placeholder — Altadena foothills / ARW community photo
-            </p>
-          </div>
+          <Image
+            src={arwAerialHero}
+            alt="Aerial view of an Altadena neighborhood block with a vacant, fire-cleared lot outlined amid surviving tree canopy and rebuilding homes"
+            class="h-full w-full object-cover"
+            width={1200}
+          />
         </div>
       </div>
     </div>

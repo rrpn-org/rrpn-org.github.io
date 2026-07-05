@@ -4,8 +4,12 @@
  * Voice note: per the brand package, project pages carry the grassroots register —
  * direct, urgent, neighbor-to-neighbor. "We" = the community.
  */
+import { Image } from "astro:assets";
+
 import Button from "@/components/button/Button.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import arwAerialHero from "@images/arw-aerial-hero.jpg";
+import arwParcelFigure from "@images/arw-parcel-figure.jpg";
 ---
 
 <BaseLayout
@@ -23,6 +27,18 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
         We lost homes, not our say. Altadena Recovery Watch keeps our neighbors informed — and
         heard — on the state laws deciding how we rebuild.
       </p>
+    </div>
+  </section>
+
+  <!-- Hero photography -->
+  <section class="site-container -mt-10 md:-mt-14">
+    <div class="mx-auto max-w-4xl overflow-hidden rounded-lg border border-border shadow-sm">
+      <Image
+        src={arwAerialHero}
+        alt="Aerial view of an Altadena neighborhood block with a vacant, fire-cleared lot outlined amid surviving tree canopy and rebuilding homes"
+        class="h-full w-full object-cover"
+        width={1400}
+      />
     </div>
   </section>
 
@@ -63,6 +79,18 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
             page as bills move.
           </p>
         </div>
+        <figure class="mt-8">
+          <Image
+            src={arwParcelFigure}
+            alt="Aerial parcel map of a fire-cleared residential lot on E Altadena Drive, marked for tracking amid still-standing neighboring homes"
+            class="w-full rounded-lg border border-border"
+            width={1200}
+          />
+          <figcaption class="text-muted-foreground mt-3 text-sm">
+            One of thousands of Altadena lots cleared by the Eaton Fire and now awaiting rebuilding
+            — the kind of parcel directly affected by the state legislation ARW tracks.
+          </figcaption>
+        </figure>
       </div>
 
       <div>
