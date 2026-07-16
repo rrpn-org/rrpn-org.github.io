@@ -4,7 +4,6 @@ import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
 
 import Button from "@/components/button/Button.astro";
-import NewsletterSignup from "@/components/newsletter/NewsletterSignup.astro";
 import { getLocaleFromUrl } from "@/js/localeUtils";
 import { getTranslatedData } from "@/js/translationUtils";
 import { formatDate } from "@/js/textUtils";
@@ -38,7 +37,7 @@ const pillars = [
     icon: "tabler/building-community",
     title: "Community Activation",
     description:
-      "Building the systems, networks, and know-how that give communities a durable safety net — so residents can organize, stay informed, and act together, long after the crisis headlines fade.",
+      "Helping neighbors stand up the organizations, networks, and resource-navigation systems that carry a community through recovery — and build resilience before the next disaster.",
   },
 ];
 
@@ -106,8 +105,8 @@ const news = (await getCollection("news", ({ data }) => data.draft !== true))
           data-mos-delay=".3"
         >
           <Button href="/about" variant="secondary" class="md:text-lg">About RRPN</Button>
-          <Button href="/get-involved" variant="outline" class="button--on-dark md:text-lg">
-            Get Involved
+          <Button href="#newsletter" variant="outline" class="button--on-dark md:text-lg">
+            Get updates
           </Button>
         </div>
       </div>
@@ -120,7 +119,7 @@ const news = (await getCollection("news", ({ data }) => data.draft !== true))
       <h2 class="h2 text-primary">What we do</h2>
       <p class="text-muted-foreground mt-3 md:text-lg">
         When disaster strikes, the policies that shape a community's recovery are too often written
-        far from the people living it. RRPN works to close that gap through three lines of work.
+        far from the people living it. RRPN works to close that gap through four lines of work.
       </p>
     </div>
     <div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
@@ -153,9 +152,8 @@ const news = (await getCollection("news", ({ data }) => data.draft !== true))
           <h2 class="h2 text-primary">Altadena Recovery Watch</h2>
           <p class="text-muted-foreground mt-4 md:text-lg">
             Born of the 2025 Eaton Fire, Altadena Recovery Watch engages thousands of residents on
-            the state legislation shaping their recovery — from rebuilding and land-use bills like
-            SB 1090 and SB 1123 to wildfire-fund measures like SB 254. Neighbors informing
-            neighbors, so the community's voice reaches Sacramento.
+            the land-use and rebuilding legislation shaping their recovery (SB 1090 and SB 1123).
+            Neighbors informing neighbors, so the community's voice reaches Sacramento.
           </p>
           <div class="mt-8">
             <Button href="/projects/altadena-recovery-watch" variant="primary" arrow="right">
@@ -250,5 +248,4 @@ const news = (await getCollection("news", ({ data }) => data.draft !== true))
     </div>
   </section>
 
-  <NewsletterSignup />
 </BaseLayout>

@@ -18,25 +18,16 @@ const navConfig: navItem[] = [
     link: "/projects",
   },
   {
-    text: "Resources",
-    dropdown: [
-      {
-        text: "Publications",
-        link: "/publications",
-      },
-      {
-        text: "Updates",
-        link: "/updates",
-      },
-      {
-        text: "News",
-        link: "/news",
-      },
-    ],
+    text: "Publications",
+    link: "/publications",
   },
   {
-    text: "Contact",
-    link: "/contact",
+    text: "Updates",
+    link: "/updates",
+  },
+  {
+    text: "News",
+    link: "/news",
   },
 ];
 

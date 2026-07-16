@@ -6,6 +6,7 @@ import { type CollectionEntry } from "astro:content";
 import CookieConsent from "@/components/cookie-consent/CookieConsent.astro";
 import Footer from "@/components/footer/Footer.astro";
 import Nav from "@/components/nav/Nav.astro";
+import NewsletterSignup from "@/components/newsletter/NewsletterSignup.astro";
 import siteSettings from "@/config/siteSettings.json";
 import { getLocaleFromUrl } from "@/js/localeUtils";
 import BaseHead from "@/layouts/BaseHead.astro";
@@ -58,6 +59,7 @@ const currLocale = getLocaleFromUrl(Astro.url);
       <main class="relative min-h-lvh overflow-x-clip">
         <slot />
       </main>
+      <NewsletterSignup />
       <Footer />
     </div>
 
