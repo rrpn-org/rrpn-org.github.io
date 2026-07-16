@@ -1,4 +1,4 @@
-# rrpn.org — Responsible and Resilient Planning Network
+# rrpn.org — Responsible Recovery Planning Network
 
 Static site built with [Astro](https://astro.build) + Tailwind CSS 4, adapted from the
 Cosmic Themes "Space Coast" theme (licensed copy; pristine original in `../space-coast-main/`).
@@ -26,4 +26,4 @@ Entry frontmatter supports `reviewStatus: "draft"` (visible DRAFT badge) and
 See `../BUILD-NOTES.md` for the full list of placeholders, DRAFT pages, and deploy steps
 (Cloudflare Pages: build `npm run build`, output `dist`).
 
-&copy; 2026 Responsible and Resilient Planning Network
+&copy; 2026 Responsible Recovery Planning Network

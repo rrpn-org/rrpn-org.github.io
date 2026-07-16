@@ -20,19 +20,25 @@ const pillars = [
     icon: "tabler/list-check",
     title: "Research & Policy",
     description:
-      "Rigorous, best-practices research on housing law, disaster recovery, climate adaptation, and land use — grounded in what the law says and what it means on the ground.",
+      "Rigorous, best-practices research on disaster recovery, wildfire resilience, housing, and land use — grounded in what the law says and what it means on the ground.",
   },
   {
     icon: "tabler/speakerphone",
     title: "Advocacy",
     description:
-      "Advocating for planning frameworks that respect both statewide goals and community self-determination, before state and local decision-makers.",
+      "Advocating for recovery and resilience policies that respect both statewide goals and community self-determination, before state and local decision-makers.",
   },
   {
     icon: "tabler/school",
     title: "Education",
     description:
       "Educating residents, practitioners, and policymakers so everyone at the table understands what the law says, what it means, and what it could be.",
+  },
+  {
+    icon: "tabler/building-community",
+    title: "Community Activation",
+    description:
+      "Building the systems, networks, and know-how that give communities a durable safety net — so residents can organize, stay informed, and act together, long after the crisis headlines fade.",
   },
 ];
 
@@ -82,7 +88,7 @@ const news = (await getCollection("news", ({ data }) => data.draft !== true))
           data-mos-delay=".1"
           class="font-heading text-base-50 mb-6 text-4xl leading-tight font-semibold md:text-5xl xl:text-6xl"
         >
-          Policy, advocacy, and education at the intersection of state law and local land use.
+          Policy, advocacy, and education for disaster recovery and resilient communities.
         </h1>
         <p
           data-mos-anchor="#hero-trigger"
@@ -90,7 +96,7 @@ const news = (await getCollection("news", ({ data }) => data.draft !== true))
           data-mos-delay=".2"
           class="text-primary-100 mb-10 max-w-2xl text-lg md:text-xl"
         >
-          The Responsible and Resilient Planning Network works so communities can rebuild, adapt,
+          The Responsible Recovery Planning Network works so communities can rebuild, adapt,
           and thrive.
         </p>
         <div
@@ -113,11 +119,11 @@ const news = (await getCollection("news", ({ data }) => data.draft !== true))
     <div class="max-w-2xl">
       <h2 class="h2 text-primary">What we do</h2>
       <p class="text-muted-foreground mt-3 md:text-lg">
-        California communities are caught between state mandates and local realities. RRPN works to
-        close that gap through three lines of work.
+        When disaster strikes, the policies that shape a community's recovery are too often written
+        far from the people living it. RRPN works to close that gap through three lines of work.
       </p>
     </div>
-    <div class="mt-12 grid gap-8 md:grid-cols-3">
+    <div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
       {
         pillars.map((pillar, idx) => (
           <div
@@ -147,8 +153,9 @@ const news = (await getCollection("news", ({ data }) => data.draft !== true))
           <h2 class="h2 text-primary">Altadena Recovery Watch</h2>
           <p class="text-muted-foreground mt-4 md:text-lg">
             Born of the 2025 Eaton Fire, Altadena Recovery Watch engages thousands of residents on
-            the state land-use legislation shaping their rebuilding — including SB 1090 and SB
-            1123. Neighbors informing neighbors, so the community's voice reaches Sacramento.
+            the state legislation shaping their recovery — from rebuilding and land-use bills like
+            SB 1090 and SB 1123 to wildfire-fund measures like SB 254. Neighbors informing
+            neighbors, so the community's voice reaches Sacramento.
           </p>
           <div class="mt-8">
             <Button href="/projects/altadena-recovery-watch" variant="primary" arrow="right">

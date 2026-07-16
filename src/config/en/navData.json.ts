@@ -35,10 +35,6 @@ const navConfig: navItem[] = [
     ],
   },
   {
-    text: "Press",
-    link: "/press",
-  },
-  {
     text: "Contact",
     link: "/contact",
   },

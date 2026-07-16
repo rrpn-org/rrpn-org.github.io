@@ -14,7 +14,7 @@ const news = (await getCollection("news", ({ data }) => data.draft !== true)).so
 
 <BaseLayout
   title="News"
-  description="Press coverage of the Responsible and Resilient Planning Network and its community projects."
+  description="Press coverage of the Responsible Recovery Planning Network and its community projects."
 >
   <section class="bg-primary-700">
     <div class="site-container pt-36 pb-16 md:pt-44 md:pb-20">
@@ -30,9 +30,9 @@ const news = (await getCollection("news", ({ data }) => data.draft !== true)).so
       {
         news.length === 0 && (
           <p class="text-muted-foreground">
-            Press coverage will be posted here. For media inquiries, see our
-            <a class="text-terracotta-600 underline hover:no-underline" href="/press">
-              Press &amp; Media Kit
+            Press coverage will be posted here. For media inquiries, email
+            <a class="text-terracotta-600 underline hover:no-underline" href="mailto:info@rrpn.org">
+              info@rrpn.org
             </a>
             .
           </p>
@@ -63,10 +63,7 @@ const news = (await getCollection("news", ({ data }) => data.draft !== true)).so
       <div class="bg-base-100 border-border mt-16 rounded-lg border p-6">
         <p class="font-medium">Covering RRPN or Altadena Recovery Watch?</p>
         <p class="text-muted-foreground mt-2">
-          Boilerplate, bios, and a press contact are on the
-          <a class="text-terracotta-600 underline hover:no-underline" href="/press"
-            >Press &amp; Media Kit</a
-          > page, or email
+          For boilerplate, bios, an interview, or comment, email
           <a class="text-terracotta-600 underline hover:no-underline" href="mailto:info@rrpn.org"
             >info@rrpn.org</a
           >.

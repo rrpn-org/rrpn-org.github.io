@@ -4,10 +4,10 @@ import { type FaqItem } from "../types/configDataTypes";
 export const faqData: FaqItem[] = [
   {
     question: "What is RRPN?",
-    answer: `The Responsible and Resilient Planning Network (RRPN) develops best-practices policy,
-    advocacy, and education at the intersection of state law and local land use — so communities
-    can rebuild, adapt, and thrive. We operate as a portfolio of community projects; our first is
-    Altadena Recovery Watch.`,
+    answer: `The Responsible Recovery Planning Network (RRPN) develops best-practices policy,
+    advocacy, and education for communities recovering from disaster and building lasting
+    resilience — so they can rebuild, adapt, and thrive. We operate as a portfolio of community
+    projects; our first is Altadena Recovery Watch.`,
   },
   {
     question: "Is RRPN a nonprofit organization?",
@@ -24,8 +24,9 @@ export const faqData: FaqItem[] = [
   {
     question: "Does RRPN work outside of Altadena?",
     answer: `Yes. Altadena Recovery Watch is our first project, born of the 2025 Eaton Fire, but
-    RRPN's research, advocacy, and education address the statewide intersection of California law
-    and local land use — issues that affect rebuilding and adapting communities across the state.`,
+    RRPN's research, advocacy, and education address disaster recovery, wildfire resilience, and
+    the state policy that shapes them — issues that affect rebuilding and adapting communities
+    across the state.`,
   },
 ];
 
