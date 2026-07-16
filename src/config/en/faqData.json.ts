@@ -11,9 +11,9 @@ export const faqData: FaqItem[] = [
   },
   {
     question: "Is RRPN a nonprofit organization?",
-    answer: `RRPN is newly formed and its legal formation is in progress. We are committed to
-    transparency: organizational and financial disclosures will be posted on this site as they
-    become available.`,
+    answer: `RRPN is newly formed and its legal formation is in progress. We believe organizations
+    that ask for the public's trust should earn it in the open, and we're glad to answer questions
+    about how RRPN is structured, governed, and funded — just email info@rrpn.org.`,
   },
   {
     question: "How can I get involved?",
