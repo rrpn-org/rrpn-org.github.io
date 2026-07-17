@@ -16,28 +16,28 @@ const siteData = getTranslatedData("siteData", currLocale);
 // three pillars
 const pillars = [
   {
+    icon: "tabler/building-community",
+    title: "Community Activation",
+    description:
+      "Our primary work: helping communities activate and strengthen their own networks — their social safety net — so they can respond as one to disaster and recovery. We do it by pairing technology with partnerships with existing community organizations, the same approach that helped Altadena Recovery Watch engage 2,400+ residents in three weeks.",
+  },
+  {
     icon: "tabler/list-check",
     title: "Research & Policy",
     description:
-      "Rigorous, best-practices research on disaster recovery, wildfire resilience, housing, and land use — grounded in what the law says and what it means on the ground.",
+      "Rigorous research on survivor return and anti-displacement, sound planning for private land, the public realm, and infrastructure, and long-term fiscal sustainability — in service of the networks doing the work on the ground.",
   },
   {
     icon: "tabler/speakerphone",
     title: "Advocacy",
     description:
-      "Advocating for recovery and resilience policies that respect both statewide goals and community self-determination, before state and local decision-makers.",
+      "Advocating for equitable, systems-level recovery policy that centers vulnerable populations, works across sectors, and helps communities attract the public and private investment recovery requires.",
   },
   {
     icon: "tabler/school",
     title: "Education",
     description:
-      "Educating residents, practitioners, and policymakers so everyone at the table understands what the law says, what it means, and what it could be.",
-  },
-  {
-    icon: "tabler/building-community",
-    title: "Community Activation",
-    description:
-      "Helping neighbors stand up the organizations, networks, and resource-navigation systems that carry a community through recovery — and build resilience before the next disaster.",
+      "Educating residents, practitioners, and policymakers so everyone at the table understands what the law says, what it means, and how a connected community can put it to work.",
   },
 ];
 
@@ -79,7 +79,7 @@ const news = (await getCollection("news", ({ data }) => data.draft !== true))
           data-mos="fade-right"
           class="text-accent-200 mb-4 text-sm font-medium tracking-widest uppercase"
         >
-          Better planning for a resilient California
+          Responsible Recovery Planning Network
         </p>
         <h1
           data-mos-anchor="#hero-trigger"
@@ -87,7 +87,7 @@ const news = (await getCollection("news", ({ data }) => data.draft !== true))
           data-mos-delay=".1"
           class="font-heading text-base-50 mb-6 text-4xl leading-tight font-semibold md:text-5xl xl:text-6xl"
         >
-          Policy, advocacy, and education for disaster recovery and resilient communities.
+          When disaster strikes, connected communities recover faster.
         </h1>
         <p
           data-mos-anchor="#hero-trigger"
@@ -95,8 +95,9 @@ const news = (await getCollection("news", ({ data }) => data.draft !== true))
           data-mos-delay=".2"
           class="text-primary-100 mb-10 max-w-2xl text-lg md:text-xl"
         >
-          The Responsible Recovery Planning Network works so communities can rebuild, adapt,
-          and thrive.
+          RRPN helps communities activate and strengthen their own networks — their social
+          safety net — so they can respond as one, bring survivors home, and rebuild well. We
+          bring research, planning, and policy expertise in service of that work.
         </p>
         <div
           class="flex flex-wrap gap-4"
@@ -118,8 +119,9 @@ const news = (await getCollection("news", ({ data }) => data.draft !== true))
     <div class="max-w-2xl">
       <h2 class="h2 text-primary">What we do</h2>
       <p class="text-muted-foreground mt-3 md:text-lg">
-        When disaster strikes, the policies that shape a community's recovery are too often written
-        far from the people living it. RRPN works to close that gap through four lines of work.
+        At the core of RRPN's work is community activation — helping communities activate and
+        strengthen their own networks so they can respond as one to disaster and recovery. Our
+        research, advocacy, and education work exist to serve that activation.
       </p>
     </div>
     <div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
