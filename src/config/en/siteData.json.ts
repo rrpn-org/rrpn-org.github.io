@@ -6,7 +6,7 @@ const siteData: SiteDataProps = {
   // Your website's title and description (meta fields)
   title: "Responsible Recovery Planning Network",
   description:
-    "The Responsible Recovery Planning Network (RRPN) develops best-practices policy, advocacy, and education for communities recovering from disaster and building lasting resilience — so they can rebuild, adapt, and thrive.",
+    "The Responsible Recovery Planning Network (RRPN) strengthens the recovery and resiliency networks that let California communities respond to disaster as one — supporting survivor return, housing stability, and equitable, systems-level recovery — backed by research, policy, and advocacy in service of that work.",
 
   // Your information for blog post purposes
   author: {

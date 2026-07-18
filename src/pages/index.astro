@@ -17,27 +17,27 @@ const siteData = getTranslatedData("siteData", currLocale);
 const pillars = [
   {
     icon: "tabler/building-community",
-    title: "Community Activation",
+    title: "Recovery & Resiliency Networks",
     description:
-      "Our primary work: helping communities activate and strengthen their own networks — their social safety net — so they can respond as one to disaster and recovery. We do it by pairing technology with partnerships with existing community organizations, the same approach that helped Altadena Recovery Watch engage 2,400+ residents in three weeks.",
+      "Our primary work: strengthening the recovery and resiliency networks — the social safety net — that let communities respond as one to disaster, support survivor return, and combat displacement. We do it by pairing technology with partnerships with existing community organizations, the same approach that helped Altadena Recovery Watch engage 2,400+ residents in three weeks.",
   },
   {
     icon: "tabler/list-check",
     title: "Research & Policy",
     description:
-      "Rigorous research on survivor return and anti-displacement, sound planning for private land, the public realm, and infrastructure, and long-term fiscal sustainability — in service of the networks doing the work on the ground.",
+      "Rigorous research in service of that network: survivor return and housing stability, equitable disaster response that centers vulnerable populations, and sound planning for private land, the public realm, and infrastructure — paired with the long-term fiscal sustainability recovery depends on.",
   },
   {
     icon: "tabler/speakerphone",
     title: "Advocacy",
     description:
-      "Advocating for equitable, systems-level recovery policy that centers vulnerable populations, works across sectors, and helps communities attract the public and private investment recovery requires.",
+      "Advocating for systems-level remedies rather than one-off fixes — and helping communities attract the greater public and private investment that rebuilding actually requires.",
   },
   {
     icon: "tabler/school",
     title: "Education",
     description:
-      "Educating residents, practitioners, and policymakers so everyone at the table understands what the law says, what it means, and how a connected community can put it to work.",
+      "Educating residents, practitioners, and policymakers — and convening across sectors, from local government to utilities to funders, so everyone at the table is working from the same facts.",
   },
 ];
 
@@ -95,7 +95,7 @@ const news = (await getCollection("news", ({ data }) => data.draft !== true))
           data-mos-delay=".2"
           class="text-primary-100 mb-10 max-w-2xl text-lg md:text-xl"
         >
-          RRPN helps communities activate and strengthen their own networks — their social
+          RRPN helps communities strengthen their recovery and resiliency networks — their social
           safety net — so they can respond as one, bring survivors home, and rebuild well. We
           bring research, planning, and policy expertise in service of that work.
         </p>
@@ -119,9 +119,10 @@ const news = (await getCollection("news", ({ data }) => data.draft !== true))
     <div class="max-w-2xl">
       <h2 class="h2 text-primary">What we do</h2>
       <p class="text-muted-foreground mt-3 md:text-lg">
-        At the core of RRPN's work is community activation — helping communities activate and
-        strengthen their own networks so they can respond as one to disaster and recovery. Our
-        research, advocacy, and education work exist to serve that activation.
+        At the core of RRPN's work is strengthening recovery and resiliency networks — helping
+        communities build the connections that let them respond as one to disaster and recovery.
+        Our research, advocacy, and education exist to serve that network-building, from survivor
+        return and housing stability to sound planning and long-term fiscal sustainability.
       </p>
     </div>
     <div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">

@@ -26,7 +26,7 @@ export const dataTranslations = {
  */
 export const textTranslations = {
   en: {
-    hero_text: "Better planning for a resilient California.",
+    hero_text: "Strengthening the networks that help California communities recover.",
     back_to_all_posts: "Back to all posts",
     updated: "Updated",
     nav_cta: "Get Involved",

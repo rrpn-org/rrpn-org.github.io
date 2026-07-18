@@ -4,10 +4,10 @@ import { type FaqItem } from "../types/configDataTypes";
 export const faqData: FaqItem[] = [
   {
     question: "What is RRPN?",
-    answer: `The Responsible Recovery Planning Network (RRPN) develops best-practices policy,
-    advocacy, and education for communities recovering from disaster and building lasting
-    resilience — so they can rebuild, adapt, and thrive. We operate as a portfolio of community
-    projects; our first is Altadena Recovery Watch.`,
+    answer: `The Responsible Recovery Planning Network (RRPN) strengthens the recovery and
+    resiliency networks that help communities respond as one to disaster and rebuild well —
+    backed by research, policy, and advocacy in service of that work. We operate as a portfolio
+    of community projects; our first is Altadena Recovery Watch.`,
   },
   {
     question: "Is RRPN a nonprofit organization?",
@@ -24,9 +24,10 @@ export const faqData: FaqItem[] = [
   {
     question: "Does RRPN work outside of Altadena?",
     answer: `Yes. Altadena Recovery Watch is our first project, born of the 2025 Eaton Fire, but
-    RRPN's research, advocacy, and education address disaster recovery, wildfire resilience, and
-    the state policy that shapes them — issues that affect rebuilding and adapting communities
-    across the state.`,
+    RRPN's work — strengthening recovery and resiliency networks, and the research, advocacy, and
+    education that support it — addresses disaster recovery, wildfire resilience, and the state
+    policy that shapes them, issues that affect rebuilding and adapting communities across the
+    state.`,
   },
 ];
 
